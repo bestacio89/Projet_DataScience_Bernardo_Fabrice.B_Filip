@@ -5,41 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5bac4744-b851-4d74-b454-0f3ad4b1ff77" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Projet_DataScience_Bernardo_Fabrice.B_Filip.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/external.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/processed.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/raw.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/regression_lineaire/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/regression_lineaire/modele_vin.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/reseau_neurones/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/reseau_neurones/modele_diabete.h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebooks/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebooks/exploration/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebooks/exploration/analyse_variables_diabete.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebooks/exploration/exploration_donnees_vin.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebooks/modelisation/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebooks/modelisation/entrainement_modele_vin.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebooks/preprocessing/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebooks/preprocessing/preprocessing_donnéés_vin.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reports/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reports/figures" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/classification.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/nails.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/regression.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/visualization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/activate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/activate.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/activate.fish" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/activate.nu" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/activate.ps1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/activate_this.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/deactivate.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/pip-3.12.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/pip.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/pip3.12.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/pip3.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/pydoc.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/python.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/pythonw.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/pyvenv.cfg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +61,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\berna\Desktop\Projet_DataScience_Bernardo_Fabrice.B_Filip" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -96,7 +82,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1731659148436</updated>
-      <workItem from="1731663119614" duration="304000" />
+      <workItem from="1731663119614" duration="889000" />
     </task>
     <servers />
   </component>
