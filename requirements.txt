@@ -33,6 +33,10 @@ certifi==2024.8.30
 charset-normalizer==3.3.2
 idna==3.8
 
+# API Development
+fastapi==0.103.1  # Compatible with Python 3.12
+pydantic==2.5.1  # Updated for Python 3.12 compatibility
+
 # Dependency and Build Tools
 attrs==24.2.0
 blinker==1.8.2

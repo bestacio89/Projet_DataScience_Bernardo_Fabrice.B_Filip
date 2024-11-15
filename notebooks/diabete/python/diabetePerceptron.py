@@ -5,13 +5,14 @@ Diabetes Prediction App using a Deep Learning Model in TensorFlow
 
 This script trains a neural network model to predict diabetes-related outcomes
 using a provided dataset. The script includes data preprocessing, model training,
-evaluation, and optional hyperparameter tuning.
+evaluation, hyperparameter tuning, and architecture optimization.
 
-Author: Bernardo Estacio Abrei, Fabrice Bellin, Filip Dabrowsky
+Author: Bernardo Estacio Abreu, Fabrice Bellin, Filip Dabrowsky
 Date: 15/11/2024
 """
 
 # Import necessary libraries
+import os
 import numpy as np
 import pandas as pd
 import tensorflow as tf
@@ -22,7 +23,6 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout
 from tensorflow.keras.callbacks import EarlyStopping
 from sklearn.metrics import mean_absolute_error
-
 
 # Load and preprocess data
 def load_and_preprocess_data(filepath):
@@ -35,15 +35,12 @@ def load_and_preprocess_data(filepath):
     Returns:
         tuple: Scaled features (X) and target variable (y).
     """
-    # Load dataset
     data = pd.read_csv(filepath)
     data = data.drop(columns=["Unnamed: 0"], errors="ignore")  # Drop unnecessary column
 
-    # Separate features and target variable
     X = data.drop(columns=["target"])
     y = data["target"]
 
-    # Scale features to the range [0, 1] for better model performance
     scaler = MinMaxScaler()
     X_scaled = scaler.fit_transform(X)
 
@@ -62,36 +59,34 @@ def split_data(X, y):
     Returns:
         tuple: Training, validation, and testing sets for features and target variable.
     """
-    # Initial split to get a train set and a temporary set for validation/testing
     X_train, X_temp, y_train, y_temp = train_test_split(X, y, test_size=0.3, random_state=42)
-    # Split the temporary set further into validation and test sets
     X_val, X_test, y_val, y_test = train_test_split(X_temp, y_temp, test_size=0.5, random_state=42)
-
     return X_train, X_val, X_test, y_train, y_val, y_test
 
 
-# Build the neural network model
-def build_model(input_shape):
+# Define and build a neural network model
+def build_model(input_shape, layers, dropout_rate, activation):
     """
     Build and compile a neural network model using TensorFlow Keras.
 
     Parameters:
-        input_shape (int): The number of features in the input data.
+        input_shape (int): Number of input features.
+        layers (list): List containing number of neurons in each hidden layer.
+        dropout_rate (float): Dropout rate to prevent overfitting.
+        activation (str): Activation function for hidden layers.
 
     Returns:
         Sequential: A compiled Keras Sequential model.
     """
-    model = Sequential([
-        Dense(256, activation='relu', input_shape=(input_shape,)),
-        Dropout(0.4),
-        Dense(128, activation='relu'),
-        Dropout(0.3),
-        Dense(64, activation='relu'),
-        Dropout(0.2),
-        Dense(1)  # Output layer for regression
-    ])
+    model = Sequential()
+    model.add(Dense(layers[0], activation=activation, input_shape=(input_shape,)))
 
-    # Compile model with mean squared error as loss for regression
+    for neurons in layers[1:]:
+        model.add(Dense(neurons, activation=activation))
+        model.add(Dropout(dropout_rate))
+
+    model.add(Dense(1))  # Output layer for regression
+
     model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),
                   loss='mean_squared_error',
                   metrics=['mean_absolute_error'])
@@ -99,97 +94,126 @@ def build_model(input_shape):
     return model
 
 
-# Train the model with early stopping
-def train_model(model, X_train, y_train, X_val, y_val):
+# Train the model
+def train_model(model, X_train, y_train, X_val, y_val, batch_size, epochs, patience):
     """
-    Train the neural network model with early stopping to avoid overfitting.
+    Train the neural network model with early stopping and given hyperparameters.
 
     Parameters:
-        model (Sequential): The compiled neural network model.
+        model (Sequential): Compiled Keras model.
         X_train (ndarray): Training features.
         y_train (Series): Training target variable.
         X_val (ndarray): Validation features.
         y_val (Series): Validation target variable.
+        batch_size (int): Number of samples per batch.
+        epochs (int): Maximum number of training epochs.
+        patience (int): Number of epochs with no improvement to stop training.
 
     Returns:
-        History: Training history object with details on training and validation loss.
+        History: Training history object.
     """
-    early_stopping = EarlyStopping(monitor='val_loss', patience=15, restore_best_weights=True)
+    early_stopping = EarlyStopping(monitor='val_loss', patience=patience, restore_best_weights=True)
 
-    # Fit the model with training data and validate on validation set
     history = model.fit(X_train, y_train,
                         validation_data=(X_val, y_val),
-                        epochs=200,
-                        batch_size=16,
+                        epochs=epochs,
+                        batch_size=batch_size,
                         callbacks=[early_stopping],
                         verbose=1)
 
     return history
 
 
-# Evaluate the model on the test data
-def evaluate_model(model, X_test, y_test):
+# Hyperparameter tuning function
+def tune_hyperparameters(X_train, y_train, X_val, y_val):
     """
-    Evaluate the model on the test set and print the results.
+    Tune hyperparameters by testing multiple configurations.
 
     Parameters:
-        model (Sequential): The trained neural network model.
-        X_test (ndarray): Test features.
-        y_test (Series): Test target variable.
+        X_train (ndarray): Training features.
+        y_train (Series): Training target variable.
+        X_val (ndarray): Validation features.
+        y_val (Series): Validation target variable.
 
     Returns:
-        float: Mean Absolute Error of the model on the test set.
+        Sequential: Best Keras model based on validation performance.
+        dict: Best hyperparameters.
     """
-    loss, mae = model.evaluate(X_test, y_test, verbose=0)
-    print(f"Test Loss: {loss:.4f}, Test MAE: {mae:.4f}")
-    return mae
+    best_mae = float("inf")
+    best_model = None
+    best_params = {}
+
+    # Hyperparameter grid
+    layer_configs = [[128, 64], [256, 128, 64]]
+    dropout_rates = [0.2, 0.3, 0.4]
+    activations = ['relu', 'tanh']
+    batch_sizes = [16, 32]
+    epochs = 200
+    patience = 15
+
+    # Grid search
+    for layers in layer_configs:
+        for dropout_rate in dropout_rates:
+            for activation in activations:
+                for batch_size in batch_sizes:
+                    print(f"Testing: Layers={layers}, Dropout={dropout_rate}, Activation={activation}, Batch Size={batch_size}")
+                    model = build_model(X_train.shape[1], layers, dropout_rate, activation)
+                    history = train_model(model, X_train, y_train, X_val, y_val, batch_size, epochs, patience)
+                    val_mae = min(history.history['val_mean_absolute_error'])
+
+                    if val_mae < best_mae:
+                        best_mae = val_mae
+                        best_model = model
+                        best_params = {
+                            'layers': layers,
+                            'dropout_rate': dropout_rate,
+                            'activation': activation,
+                            'batch_size': batch_size,
+                            'patience': patience
+                        }
+
+    print(f"Best Hyperparameters: {best_params}")
+    return best_model, best_params
 
 
-# Plot training and validation loss
-def plot_training_history(history):
+# Save the model
+def save_model(model, directory, filename):
     """
-    Plot the training and validation loss over epochs.
+    Save the trained model to the specified directory.
 
     Parameters:
-        history (History): Training history returned by model.fit.
+        model (Sequential): Trained Keras model.
+        directory (str): Directory to save the model.
+        filename (str): Filename for the saved model.
     """
-    plt.figure(figsize=(12, 6))
-    plt.plot(history.history['loss'], label='Training Loss')
-    plt.plot(history.history['val_loss'], label='Validation Loss')
-    plt.title('Model Loss')
-    plt.xlabel('Epochs')
-    plt.ylabel('Loss')
-    plt.legend()
-    plt.show()
+    os.makedirs(directory, exist_ok=True)
+    save_path = os.path.join(directory, filename)
+    model.save(save_path)
+    print(f"Model saved at {save_path}")
 
 
-# Main function to execute the entire workflow
+# Main function
 def main(filepath):
     """
-    Main function to execute data loading, preprocessing, model training, and evaluation.
+    Main function to execute the entire workflow.
 
     Parameters:
         filepath (str): Path to the CSV file containing the dataset.
     """
-    # Load and preprocess data
     X, y = load_and_preprocess_data(filepath)
-
-    # Split data
     X_train, X_val, X_test, y_train, y_val, y_test = split_data(X, y)
 
-    # Build model
-    model = build_model(X_train.shape[1])
+    # Tune hyperparameters and get the best model
+    best_model, best_params = tune_hyperparameters(X_train, y_train, X_val, y_val)
 
-    # Train model
-    history = train_model(model, X_train, y_train, X_val, y_val)
+    # Evaluate on test set
+    loss, mae = best_model.evaluate(X_test, y_test, verbose=0)
+    print(f"Test Loss: {loss:.4f}, Test MAE: {mae:.4f}")
 
-    # Evaluate model
-    evaluate_model(model, X_test, y_test)
-
-    # Plot training history
-    plot_training_history(history)
+    # Save the best model
+    save_model(best_model, "model/diabete", "DiabetePerceptron.keras")
 
 
-# Run the app
+# Run the script
 if __name__ == "__main__":
-    main('../data/diabete.csv')
+    main('../../data/diabete.csv')
