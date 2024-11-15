@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5bac4744-b851-4d74-b454-0f3ad4b1ff77" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Projet_DataScience_Bernardo_Fabrice.B_Filip.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Projet_DataScience_Bernardo_Fabrice.B_Filip.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Roboflow/integration_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/exploration/analyse_variables_diabete.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/exploration/analyse_variables_diabete.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/exploration/exploration_donnees_vin.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/exploration/exploration_donnees_vin.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/classification.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classification.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/nails.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/nails.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/regression.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/regression.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebooks/diabete/python/diabetePerceptron.py" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/diabete/python/diabetePerceptron.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebooks/diabete/python/diabeteRandomForest.py" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/diabete/python/diabeteRandomForest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +19,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Jupyter Notebook" />
         <option value="Python Script" />
       </list>
     </option>
@@ -55,6 +53,9 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\berna\Desktop\Projet_DataScience_Bernardo_Fabrice.B_Filip\notebooks\diabete\Jupyter" />
+      <recent name="C:\Users\berna\Desktop\Projet_DataScience_Bernardo_Fabrice.B_Filip\notebooks\diabete" />
+      <recent name="C:\Users\berna\Desktop\Projet_DataScience_Bernardo_Fabrice.B_Filip\notebooks\diabete\python" />
       <recent name="C:\Users\berna\Desktop\Projet_DataScience_Bernardo_Fabrice.B_Filip\data" />
       <recent name="C:\Users\berna\Desktop\Projet_DataScience_Bernardo_Fabrice.B_Filip" />
     </key>
@@ -76,7 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1731659148436</updated>
       <workItem from="1731663119614" duration="1482000" />
-      <workItem from="1731664631271" duration="4684000" />
+      <workItem from="1731664631271" duration="15358000" />
     </task>
     <servers />
   </component>
