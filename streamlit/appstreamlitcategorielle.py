@@ -40,7 +40,7 @@ def preprocess_numerical_data(data, numerical_columns, strategy):
     return data
 
 # Streamlit App
-st.title("Mixed Data Handling App with Fine-Tunable Machine Learning Models")
+st.title("Mixed Data Handling App with Machine Learning Models")
 st.write("Upload, preprocess, and apply machine learning models to predict the target label.")
 
 # File uploader
@@ -91,10 +91,15 @@ if uploaded_file is not None:
         X = data[feature_columns]
         y = data[target_column]
 
+        # Re-check numerical columns after encoding (if applicable)
+        categorical_columns, numerical_columns = detect_columns(X)
+
         # Scale numerical features
         scaler = StandardScaler()
         if numerical_columns:
-            X[numerical_columns] = scaler.fit_transform(X[numerical_columns])
+            numerical_columns_in_X = [col for col in numerical_columns if col in X.columns]
+            if numerical_columns_in_X:
+                X[numerical_columns_in_X] = scaler.fit_transform(X[numerical_columns_in_X])
 
         # Split data
         test_size = st.slider("Test size (proportion):", 0.1, 0.5, 0.2)
@@ -132,27 +137,5 @@ if uploaded_file is not None:
                 comparison = pd.DataFrame({"Actual": y_test, "Predicted": y_pred}).head(20)
                 st.write(comparison)
 
-            # Fine-tuning options
-            st.write("### Fine-Tuning Options")
-            if model_choice == "Random Forest":
-                n_estimators = st.slider("Fine-tune Number of Trees (n_estimators):", 10, 300, n_estimators)
-                model.set_params(n_estimators=n_estimators)
-            elif model_choice == "Perceptron":
-                max_iter = st.slider("Fine-tune Maximum Iterations:", 100, 2000, max_iter)
-                model.set_params(max_iter=max_iter)
-
-            if st.button("Re-Train with Fine-Tuned Parameters"):
-                model.fit(X_train, y_train)
-                y_pred = model.predict(X_test)
-
-                if model_choice in ["Random Forest", "Perceptron"]:
-                    accuracy = accuracy_score(y_test, y_pred)
-                    st.write(f"### Fine-Tuned Accuracy: {accuracy:.2f}")
-                    st.write("### Classification Report")
-                    st.text(classification_report(y_test, y_pred))
-
-                elif model_choice == "Regression":
-                    mse = mean_squared_error(y_test, y_pred)
-                    st.write(f"### Fine-Tuned Mean Squared Error: {mse:.2f}")
 else:
     st.write("Please upload a CSV file to begin.")
