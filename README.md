@@ -27,7 +27,7 @@ L'application propose les fonctionnalités suivantes :
 
 ## Installation
 
-1. **Cloner le dépôt :**  `git clone <url_du_depot>`
+1. **Cloner le dépôt :**  git clone https://github.com/bestacio89/Projet_DataScience_Bernardo_Fabrice.B_Filip
 2. **Créer un environnement virtuel :** `python3 -m venv .venv`
 3. **Activer l'environnement virtuel :** 
     * Linux/macOS : `source .venv/bin/activate`
