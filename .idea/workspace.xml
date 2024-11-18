@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5bac4744-b851-4d74-b454-0f3ad4b1ff77" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/streamlit/modelised_classes/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/modelisation/entrainement_modele_vin.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/modelisation/entrainement_modele_vin.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebooks/diabete/python/diabetePerceptron.py" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/diabete/python/diabetePerceptron.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +19,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jupyter Notebook" />
-        <option value="Python Script" />
         <option value="Jupyter Notebook" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -73,8 +75,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23726.102" />
-        <option value="bundled-python-sdk-5e1850174b45-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23726.102" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.18968.29" />
+        <option value="bundled-python-sdk-f5635417b835-2767605e8bc2-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.18968.29" />
       </set>
     </attachedChunks>
   </component>
@@ -90,6 +92,7 @@
       <workItem from="1731664631271" duration="4684000" />
       <workItem from="1731679481318" duration="1963000" />
       <workItem from="1731919324552" duration="1363000" />
+      <workItem from="1731927785894" duration="905000" />
     </task>
     <servers />
   </component>
