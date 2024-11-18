@@ -30,3 +30,8 @@ if page == "Accueil":
     st.image("data/docteur.jpg", use_container_width=True)  # Chemin adapté
 
 # ... (ton code pour les autres pages)
+
+if page == "Régression":
+    st.header("Bienvenue !")
+    choix_algorythme = st.selectbox("Selectionnez", ["1", "2", "3"])
+    st.write(choix_algorythme)
