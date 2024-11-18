@@ -7,7 +7,7 @@ This script creates a FastAPI-based RESTful API to serve predictions from the
 trained Perceptron (Neural Network), Random Forest, and Linear Regression models.
 Clients can send data to the API and receive predictions.
 
-Author: Bernardo Estacio Abreu, Fabrice Bellin, Filip Dabrowsky
+Author: Bernardo Estacio Abreu, Fabrice Bellin, Filip Dabrowski
 Date: 15/11/2024
 """
 
