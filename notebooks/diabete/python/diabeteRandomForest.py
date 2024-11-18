@@ -197,8 +197,8 @@ def main(filepath):
     evaluate_model(lr_model, X_test, y_test)
 
     # Save the models
-    save_model(rf_model, "model/diabete", "DiabeteRandomForestModel.pkl")
-    save_model(lr_model, "model/diabete", "DiabeteLinearRegressionModel.pkl")
+    save_model(rf_model, "../../model/diabete", "DiabeteRandomForestModel.pkl")
+    save_model(lr_model, "../../model/diabete", "DiabeteLinearRegressionModel.pkl")
 
 
 # Run the app
