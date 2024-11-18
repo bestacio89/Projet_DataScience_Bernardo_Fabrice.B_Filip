@@ -1,5 +1,3 @@
-# diabetes_prediction_app.py
-
 """
 Diabetes Prediction App using a Deep Learning Model in TensorFlow
 
@@ -24,6 +22,14 @@ from tensorflow.keras.layers import Dense, Dropout
 from tensorflow.keras.callbacks import EarlyStopping
 from sklearn.metrics import mean_absolute_error
 
+# Ensure compatibility between numpy and sklearn
+try:
+    import numpy.core.numeric
+except ImportError:
+    print("Error: Ensure that numpy and scikit-learn are compatible versions.")
+    print("Try running: pip install numpy --upgrade and pip install scikit-learn --upgrade")
+    exit()
+
 # Load and preprocess data
 def load_and_preprocess_data(filepath):
     """
@@ -36,7 +42,11 @@ def load_and_preprocess_data(filepath):
         tuple: Scaled features (X) and target variable (y).
     """
     data = pd.read_csv(filepath)
-    data = data.drop(columns=["Unnamed: 0"], errors="ignore")  # Drop unnecessary column
+    if "Unnamed: 0" in data.columns:
+        data = data.drop(columns=["Unnamed: 0"])  # Drop unnecessary column
+
+    if "target" not in data.columns:
+        raise ValueError("The dataset must contain a 'target' column for predictions.")
 
     X = data.drop(columns=["target"])
     y = data["target"]

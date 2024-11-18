@@ -4,11 +4,12 @@ python-dateutil==2.9.0
 pytz==2024.1
 scipy==1.11.2
 protobuf==5.28.0
+numpy == 1.26.0
 
 # Machine Learning and AI Libraries
 tensorflow>=2.16.0
 imageai==3.0.3
-scikit-learn  # Specify version for Python 3.12 compatibility
+scikit-learn ==1.5.2 # Specify version for Python 3.12 compatibility
 
 # Visualization Libraries
 altair

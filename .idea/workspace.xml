@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bac4744-b851-4d74-b454-0f3ad4b1ff77" name="Changes" comment="" />
+    <list default="true" id="5bac4744-b851-4d74-b454-0f3ad4b1ff77" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebooks/diabete/python/diabetePerceptron.py" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/diabete/python/diabetePerceptron.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,6 +51,9 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.diabetePerceptron.executor&quot;: &quot;Run&quot;,
+    &quot;Python.diabetestreamlit.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/DataScience/Projet_DataScience_Bernardo_Fabrice.B_Filip&quot;,
@@ -60,11 +67,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\berna\Desktop\Projet_DataScience_Bernardo_Fabrice.B_Filip\streamlit" />
       <recent name="C:\Users\berna\Desktop\Projet_DataScience_Bernardo_Fabrice.B_Filip\notebooks\diabete\Jupyter" />
       <recent name="C:\Users\berna\Desktop\Projet_DataScience_Bernardo_Fabrice.B_Filip\notebooks\diabete" />
       <recent name="C:\Users\berna\Desktop\Projet_DataScience_Bernardo_Fabrice.B_Filip\notebooks\diabete\python" />
       <recent name="C:\Users\berna\Desktop\Projet_DataScience_Bernardo_Fabrice.B_Filip\data" />
-      <recent name="C:\Users\berna\Desktop\Projet_DataScience_Bernardo_Fabrice.B_Filip" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -93,5 +100,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Projet_DataScience_Bernardo_Fabrice_B_Filip$diabetePerceptron.coverage" NAME="diabetePerceptron Coverage Results" MODIFIED="1731935703689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/notebooks/diabete/python" />
+    <SUITE FILE_PATH="coverage/Projet_DataScience_Bernardo_Fabrice_B_Filip$app.coverage" NAME="app Coverage Results" MODIFIED="1731937828399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/streamlit/app" />
+    <SUITE FILE_PATH="coverage/Projet_DataScience_Bernardo_Fabrice_B_Filip$diabetestreamlit.coverage" NAME="diabetestreamlit Coverage Results" MODIFIED="1731938134876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/streamlit" />
   </component>
 </project>
