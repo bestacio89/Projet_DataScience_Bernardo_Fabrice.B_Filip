@@ -1,43 +1,41 @@
 import streamlit as st
+from streamlit.modelised_classes.diabetes_prediction_ml_module import DiabetesPredictionML
 from streamlit.modelised_classes.diabetes_prediction_module import DiabetesPredictionApp
 
 st.title("Application de Data Science")
 
 # Sidebar Menu
-page = st.sidebar.selectbox("Choisissez une page:", ["Accueil", "Régression", "Classification", "Ongles"])
+page = st.sidebar.selectbox("Choisissez une page:", ["Accueil", "Régression", "Classification (Deep Learning)", "Classification (ML)"])
 
 if page == "Accueil":
     st.write("Bienvenue sur l'application de Data Science!")
-    st.write("Naviguez à travers les pages pour explorer des cas d'utilisation spécifiques :")
     st.markdown("""
-    - **Régression** : Modèles de prédiction sur des données continues.
-    - **Classification** : Modèles de prédiction binaire ou multi-classes.
-    - **Ongles** : Analyse d'images et classification.
+    Naviguez à travers les pages pour explorer :
+    - **Régression** : Cas d'utilisation avec des données continues.
+    - **Classification (Deep Learning)** : Modèles de réseaux de neurones pour la classification.
+    - **Classification (ML)** : Modèles de Machine Learning pour la classification.
     """)
 
-elif page == "Régression":
-    st.write("## Régression sur la qualité du vin")
-    st.write("Cette section est en cours de développement. Revenez bientôt!")
+elif page == "Classification (Deep Learning)":
+    st.write("## Classification du diabète avec Deep Learning")
+    filepath = st.text_input("Entrez le chemin vers le dataset :", value="data/diabete.csv")
 
-elif page == "Classification":
-    st.write("## Classification du diabète")
-
-    # User input for file path
-    filepath = st.text_input("Entrez le chemin vers le dataset du diabète :", value="data/diabete.csv")
-
-    if st.button("Exécuter la classification"):
+    if st.button("Exécuter"):
         if filepath:
-            try:
-                # Run the DiabetesPrediction workflow
-                diabetes_app = DiabetesPredictionApp(filepath)
-                diabetes_app.execute_workflow()
-                st.success(
-                    "Workflow terminé avec succès! Modèle enregistré dans `model/diabete/DiabetePerceptron.keras`")
-            except Exception as e:
-                st.error(f"Erreur lors de l'exécution : {e}")
+            diabetes_app = DiabetesPredictionApp(filepath)
+            diabetes_app.execute_workflow()
+            st.success("Workflow terminé avec succès ! Modèle sauvegardé.")
         else:
-            st.error("Veuillez entrer un chemin valide pour le fichier dataset.")
+            st.error("Veuillez entrer un chemin valide pour le dataset.")
 
-elif page == "Ongles":
-    st.write("## Analyse d'images d'ongles")
-    st.write("Cette section est en cours de développement. Revenez bientôt!")
+elif page == "Classification (ML)":
+    st.write("## Classification du diabète avec Machine Learning")
+    filepath = st.text_input("Entrez le chemin vers le dataset :", value="data/diabete.csv")
+
+    if st.button("Exécuter"):
+        if filepath:
+            diabetes_ml_app = DiabetesPredictionML(filepath)
+            diabetes_ml_app.execute_workflow()
+            st.success("Workflow terminé avec succès ! Modèles sauvegardés.")
+        else:
+            st.error("Veuillez entrer un chemin valide pour le dataset.")
