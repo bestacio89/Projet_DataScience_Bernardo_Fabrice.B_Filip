@@ -1,41 +1,32 @@
 import streamlit as st
-from streamlit.modelised_classes.diabetes_prediction_ml_module import DiabetesPredictionML
-from streamlit.modelised_classes.diabetes_prediction_module import DiabetesPredictionApp
+import pandas as pd
+
+# ... (ton code pour les imports et les fonctions)
 
 st.title("Application de Data Science")
 
-# Sidebar Menu
-page = st.sidebar.selectbox("Choisissez une page:", ["Accueil", "Régression", "Classification (Deep Learning)", "Classification (ML)"])
+# Menu
+page = st.sidebar.selectbox("Choisissez une page:", ["Accueil", "Régression", "Classification", "Ongles"])
 
 if page == "Accueil":
-    st.write("Bienvenue sur l'application de Data Science!")
-    st.markdown("""
-    Naviguez à travers les pages pour explorer :
-    - **Régression** : Cas d'utilisation avec des données continues.
-    - **Classification (Deep Learning)** : Modèles de réseaux de neurones pour la classification.
-    - **Classification (ML)** : Modèles de Machine Learning pour la classification.
-    """)
+    st.header("Bienvenue !")
+    st.write(
+        """
+        Explorez et analysez des données sur le vin et le diabète,
+        entraînez des modèles de Machine Learning et faites des prédictions.
+        """
+    )
 
-elif page == "Classification (Deep Learning)":
-    st.write("## Classification du diabète avec Deep Learning")
-    filepath = st.text_input("Entrez le chemin vers le dataset :", value="data/diabete.csv")
+    st.subheader("Fonctionnalités :")
+    st.markdown(
+        """
+        * **Régression :** Prédire la qualité du vin.
+        * **Classification :** Prédire le diabète.
+        * **Ongles :** Analyser des images d'ongles (à venir).
+        """
+    )
 
-    if st.button("Exécuter"):
-        if filepath:
-            diabetes_app = DiabetesPredictionApp(filepath)
-            diabetes_app.execute_workflow()
-            st.success("Workflow terminé avec succès ! Modèle sauvegardé.")
-        else:
-            st.error("Veuillez entrer un chemin valide pour le dataset.")
+    # Image en largeur 100% (chemin corrigé)
+    st.image("data/docteur.jpg", use_container_width=True)  # Chemin adapté
 
-elif page == "Classification (ML)":
-    st.write("## Classification du diabète avec Machine Learning")
-    filepath = st.text_input("Entrez le chemin vers le dataset :", value="data/diabete.csv")
-
-    if st.button("Exécuter"):
-        if filepath:
-            diabetes_ml_app = DiabetesPredictionML(filepath)
-            diabetes_ml_app.execute_workflow()
-            st.success("Workflow terminé avec succès ! Modèles sauvegardés.")
-        else:
-            st.error("Veuillez entrer un chemin valide pour le dataset.")
+# ... (ton code pour les autres pages)
