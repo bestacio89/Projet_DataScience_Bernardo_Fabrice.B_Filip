@@ -122,10 +122,6 @@ Utilisez ce code avec précaution.
 
 * Bernardo Estacio Abreu
 * Fabrice Bellin
-* Filip Dabrowsky
+* Filip Dabrowski
 
-## Licence
 
-[Spécifiez la licence de votre projet ici, par exemple MIT License]
-
-## Remerciements
