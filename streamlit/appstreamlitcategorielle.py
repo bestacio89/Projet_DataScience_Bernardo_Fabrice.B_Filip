@@ -81,6 +81,32 @@ def plot_correlation_heatmap(data):
 # Streamlit App
 st.title("Interactive ML Application with Error Handling")
 
+st.sidebar.info(
+    """
+    **Deep Learning Academic Project**
+    - **Authors**: Bernardo Estacio Abreu, Fabrice Bellin, Filip Dabrowsky
+    - **Date**: November 2024
+    - **Objective**: Predict result outcomes using machine learning models.
+
+    For more details, visit [GitHub Repository](https://github.com/bestacio89/Projet_DataScience_Bernardo_Fabrice.B_Filip).
+    """
+)
+# Academic Header with Markdown Styling
+st.markdown(
+    """
+    <div style="text-align: center;">
+        <h1 style="color: #4CAF50; font-family: 'Times New Roman';">
+            Deep Learning Academic Project
+        </h1>
+        <p style="font-size: 18px; font-family: 'Arial';">
+           Ce projet utilise des techniques d'apprentissage automatique pour prédire les résultats liés au diabète.
+           Les modèles explorés incluent Perceptron, Forêt Aléatoire et Régression Linéaire.
+        </p>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
+
 # Tabs
 tab1, tab2, tab3 = st.tabs(["Data & Model", "Graphs & Analysis", "Hyperparameter Tuning"])
 
@@ -248,3 +274,15 @@ with tab3:
                 st.error(f"An error occurred during hyperparameter tuning: {e}")
     else:
         st.info("Please upload a dataset and complete model training in the 'Data & Model' tab first.")
+
+# Footer with Markdown Styling
+st.markdown(
+    """
+    ---
+    <div style="text-align: center; font-size: 12px; color: gray;">
+        <p>© 2024 Deep Learning Academic Project</p>
+        <p>Developé par Bernardo Estacio Abreu, Fabrice Bellin, and Filip Dabrowsky</p>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)

@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#007BFF"                 # Professional medical blue
+backgroundColor = "#FFFFFF"              # Clean white
+secondaryBackgroundColor = "#F7FAFC"    # Light gray-blue for subtle contrast
+textColor = "#333333"                    # Neutral dark gray for softer readability
+font = "Roboto"                          # Modern, clean sans-serif font
