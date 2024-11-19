@@ -37,7 +37,7 @@ L'application propose les fonctionnalités suivantes :
 ## Exécution
 
 1. **Activer l'environnement virtuel.**
-2. **Lancer l'application Streamlit :** `streamlit run scripts/app.py`
+2. **Lancer l'application Streamlit :** `streamlit run streamlit/appstreamlitcategorielle.py`
 
 ## Structure du projet
 
@@ -71,18 +71,33 @@ Utilisez ce code avec précaution.
 │   ├── models.py
 │   ├── utils.py
 │   └── visualization.py
-└── streamlit
-└── app
-├── app.py
+── streamlit
+│   ├── app
+│   │   ├── __init__.py
+│   │   └── app.py
+│   ├── appstreamlit.py
+│   └── appstreamlitcategorielle.py 
+├── data
 ├── models
-│   ├── init.py
-│   ├── diabeted_classes.py
-│   └── diabete_prediction_ml_module.py
-└── utils
-└── init.py
+├── notebooks
+├── reports
+├── Roboflow
+├── scripts
+├── venv
+│   ├── .gitignore
+│   └── main.py
+├── .gitignore
+├── main.py
+├── README.md
+├── requirements.txt
+├── External Libraries
+└── Scratches and Consoles
 
 
 ## Données
+
+1. **Télécharger les fichiers csv du package "data" nommés "diabete.csv" et "vin.csv"**
+2. **Depuis l'interface streamlit, utiliser le browser pour charger le fichier csv que vous souhaitez parcourir**
 
 * **`data/vin.csv` :**  Contient les données sur le vin, avec des caractéristiques physico-chimiques et une note de qualité.
 * **`data/diabete.csv` :**  Contient les données sur le diabète, avec des caractéristiques des patients et une variable cible indiquant la présence ou l'absence de diabète.
