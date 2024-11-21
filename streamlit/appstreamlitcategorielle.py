@@ -1,5 +1,5 @@
 """
-Diabetes Prediction App using a Deep Learning Model in TensorFlow
+Lachine learning  Prediction App using a Deep Learning Model in TensorFlow
 
 This script trains a neural network model to predict diabetes-related outcomes
 using a provided dataset. The script includes data preprocessing, model training,
@@ -13,9 +13,10 @@ Date: 15/11/2024
 import streamlit as st
 import pandas as pd
 import numpy as np
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import Perceptron, LinearRegression
+from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, mean_squared_error, classification_report
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
@@ -91,21 +92,6 @@ st.sidebar.info(
     For more details, visit [GitHub Repository](https://github.com/bestacio89/Projet_DataScience_Bernardo_Fabrice.B_Filip).
     """
 )
-# Academic Header with Markdown Styling
-st.markdown(
-    """
-    <div style="text-align: center;">
-        <h1 style="color: #4CAF50; font-family: 'Times New Roman';">
-            Deep Learning Academic Project
-        </h1>
-        <p style="font-size: 18px; font-family: 'Arial';">
-           Ce projet utilise des techniques d'apprentissage automatique pour prédire les résultats liés au diabète.
-           Les modèles explorés incluent Perceptron, Forêt Aléatoire et Régression Linéaire.
-        </p>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
 
 # Tabs
 tab1, tab2, tab3 = st.tabs(["Data & Model", "Graphs & Analysis", "Hyperparameter Tuning"])
@@ -175,7 +161,10 @@ with tab1:
                 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=42)
 
                 # Model selection
-                model_choice = st.selectbox("Choose a model:", ["Random Forest", "Perceptron", "Regression"])
+                model_choice = st.selectbox(
+                    "Choose a model:",
+                    ["Random Forest", "Perceptron", "Regression", "Decision Tree"]
+                )
 
                 # Initialize model
                 model = None
@@ -187,13 +176,17 @@ with tab1:
                     model = Perceptron(max_iter=max_iter, random_state=42)
                 elif model_choice == "Regression":
                     model = LinearRegression()
+                elif model_choice == "Decision Tree":
+                    max_depth = st.slider("Max Depth:", 1, 50, 10)
+                    min_samples_split = st.slider("Minimum Samples Split:", 2, 10, 2)
+                    model = DecisionTreeClassifier(max_depth=max_depth, min_samples_split=min_samples_split, random_state=42)
 
                 # Train and evaluate
                 if st.button("Train and Evaluate"):
                     model.fit(X_train, y_train)
                     y_pred = model.predict(X_test)
 
-                    if model_choice in ["Random Forest", "Perceptron"]:
+                    if model_choice in ["Random Forest", "Perceptron", "Decision Tree"]:
                         accuracy = accuracy_score(y_test, y_pred)
                         st.write(f"### Accuracy: {accuracy:.2f}")
                         st.write("### Classification Report")
@@ -220,9 +213,6 @@ with tab2:
         st.info("Please upload a dataset with numerical columns for analysis.")
 
 # Hyperparameter tuning in the third tab
-from sklearn.model_selection import GridSearchCV
-
-# Hyperparameter tuning in the third tab
 with tab3:
     st.write("## Hyperparameter Tuning")
 
@@ -242,6 +232,12 @@ with tab3:
                 'alpha': st.slider("Alpha (Regularization strength):", 0.0001, 1.0, (0.0001, 0.1)),
                 'max_iter': st.slider("Maximum Iterations:", 100, 1000, (500, 1000)),
             }
+        elif model_choice == "Decision Tree":
+            st.write("### Hyperparameters for Decision Tree")
+            param_grid = {
+                'max_depth': st.slider("Max Depth:", 1, 50, (5, 25)),
+                'min_samples_split': st.slider("Minimum Samples Split:", 2, 20, (2, 10)),
+            }
         elif model_choice == "Regression":
             st.info("Regression models are less commonly tuned with grid search. Consider manual adjustments.")
             param_grid = {}
@@ -260,7 +256,7 @@ with tab3:
                     best_model = grid_search.best_estimator_
                     y_pred = best_model.predict(X_test)
 
-                    if model_choice in ["Random Forest", "Perceptron"]:
+                    if model_choice in ["Random Forest", "Perceptron", "Decision Tree"]:
                         accuracy = accuracy_score(y_test, y_pred)
                         st.write(f"### Accuracy with Best Parameters: {accuracy:.2f}")
                         st.write("### Classification Report")
@@ -274,15 +270,3 @@ with tab3:
                 st.error(f"An error occurred during hyperparameter tuning: {e}")
     else:
         st.info("Please upload a dataset and complete model training in the 'Data & Model' tab first.")
-
-# Footer with Markdown Styling
-st.markdown(
-    """
-    ---
-    <div style="text-align: center; font-size: 12px; color: gray;">
-        <p>© 2024 Deep Learning Academic Project</p>
-        <p>Developé par Bernardo Estacio Abreu, Fabrice Bellin, and Filip Dabrowsky</p>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
