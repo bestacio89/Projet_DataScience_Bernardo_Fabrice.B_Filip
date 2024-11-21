@@ -118,13 +118,15 @@ Utilisez ce code avec précaution.
 * **Streamlit**
 * **Plotly**
 
+* #Deploiement
+## Streamlit app urls 
+
+https://basicdataapp.streamlit.app/
+https://streamlircategorielle.streamlit.app/
+
 ## Auteurs
 
 * Bernardo Estacio Abreu
 * Fabrice Bellin
 * Filip Dabrowski
 
-Streamlit app urls 
-
-https://basicdataapp.streamlit.app/
-https://streamlircategorielle.streamlit.app/
