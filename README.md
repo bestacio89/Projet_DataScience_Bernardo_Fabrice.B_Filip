@@ -121,8 +121,11 @@ Utilisez ce code avec précaution.
 * #Deploiement
 ## Streamlit app urls 
 
-https://basicdataapp.streamlit.app/
-https://streamlircategorielle.streamlit.app/
+### url1
+  * https://basicdataapp.streamlit.app/
+
+### Url2
+  * https://streamlircategorielle.streamlit.app/
 
 ## Auteurs
 
