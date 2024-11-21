@@ -4,8 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="5bac4744-b851-4d74-b454-0f3ad4b1ff77" name="Changes" comment="">
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+<<<<<<< Updated upstream
+      <change afterPath="$PROJECT_DIR$/notebooks/diabete/data/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/diabete/data/diabete.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/diabete/data/docteur.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/diabete/data/external.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/diabete/data/processed.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/diabete/data/raw.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/diabete/data/vin.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebooks/diabete/python/diabetePerceptron.py" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/diabete/python/diabetePerceptron.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebooks/diabete/python/diabeteRandomForest.py" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/diabete/python/diabeteRandomForest.py" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/streamlit/appstreamlit.py" beforeDir="false" afterPath="$PROJECT_DIR$/streamlit/appstreamlit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/streamlit/appstreamlitcategorielle.py" beforeDir="false" afterPath="$PROJECT_DIR$/streamlit/appstreamlitcategorielle.py" afterDir="false" />
+=======
+    <list default="true" id="5bac4744-b851-4d74-b454-0f3ad4b1ff77" name="Changes" comment="[Add] Adresse dépot git clone (Readme.md)">
+      <change beforePath="$PROJECT_DIR$/.idea/Projet_DataScience_Bernardo_Fabrice.B_Filip.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Projet_DataScience_Bernardo_Fabrice.B_Filip.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models.py" afterDir="false" />
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +73,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< Updated upstream
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Python.app.executor&quot;: &quot;Run&quot;,
@@ -56,12 +83,47 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/berna/Desktop/Projet_DataScience_Bernardo_Fabrice.B_Filip/notebooks/diabete&quot;,
+=======
+<<<<<<< Updated upstream
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.app.executor": "Run",
+    "Python.diabetePerceptron.executor": "Run",
+    "Python.diabeteRandomForest.executor": "Run",
+    "Python.diabetestreamlit.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/berna/Desktop/Projet_DataScience_Bernardo_Fabrice.B_Filip/notebooks/diabete",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+=======
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+<<<<<<< Updated upstream
+    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.diabetePerceptron.executor&quot;: &quot;Run&quot;,
+    &quot;Python.diabetestreamlit.executor&quot;: &quot;Run&quot;,
+=======
+    &quot;Python.entrainement_modele_vin.executor&quot;: &quot;Run&quot;,
+>>>>>>> Stashed changes
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/DataScience/Projet_DataScience_Bernardo_Fabrice.B_Filip&quot;,
+>>>>>>> Stashed changes
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
   }
 }</component>
   <component name="RecentsManager">
@@ -69,7 +131,11 @@
       <recent name="C:\Users\berna\Desktop\Projet_DataScience_Bernardo_Fabrice.B_Filip\notebooks\diabete" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+<<<<<<< Updated upstream
       <recent name="C:\Users\berna\Desktop\Projet_DataScience_Bernardo_Fabrice.B_Filip\streamlit" />
+=======
+      <recent name="E:\source\Projet_DataScience_Bernardo_Fabrice.B_Filip\data" />
+>>>>>>> Stashed changes
       <recent name="C:\Users\berna\Desktop\Projet_DataScience_Bernardo_Fabrice.B_Filip\notebooks\diabete\Jupyter" />
       <recent name="C:\Users\berna\Desktop\Projet_DataScience_Bernardo_Fabrice.B_Filip\notebooks\diabete" />
       <recent name="C:\Users\berna\Desktop\Projet_DataScience_Bernardo_Fabrice.B_Filip\notebooks\diabete\python" />
@@ -154,15 +220,68 @@
       <workItem from="1731972997451" duration="685000" />
       <workItem from="1732005807381" duration="3078000" />
     </task>
+    <task id="LOCAL-00001" summary="[Add] Script choix algorythmique">
+      <option name="closed" value="true" />
+      <created>1731937543440</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731937543440</updated>
+    </task>
+    <task id="LOCAL-00002" summary="[Fix] Name Filip">
+      <option name="closed" value="true" />
+      <created>1731939137605</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1731939137605</updated>
+    </task>
+    <task id="LOCAL-00003" summary="[Add] Fichier Readme.md à terminer">
+      <option name="closed" value="true" />
+      <created>1731940423435</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1731940423435</updated>
+    </task>
+    <task id="LOCAL-00004" summary="[Add] Adresse dépot git clone (Readme.md)">
+      <option name="closed" value="true" />
+      <created>1731940598286</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1731940598286</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+<<<<<<< Updated upstream
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Projet_DataScience_Bernardo_Fabrice_B_Filip$diabetePerceptron.coverage" NAME="diabetePerceptron Coverage Results" MODIFIED="1731948510969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/notebooks/diabete/python" />
     <SUITE FILE_PATH="coverage/Projet_DataScience_Bernardo_Fabrice_B_Filip$diabeteRandomForest.coverage" NAME="diabeteRandomForest Coverage Results" MODIFIED="1731947867827" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/notebooks/diabete/python" />
     <SUITE FILE_PATH="coverage/Projet_DataScience_Bernardo_Fabrice_B_Filip$app.coverage" NAME="app Coverage Results" MODIFIED="1731937828399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/streamlit/app" />
     <SUITE FILE_PATH="coverage/Projet_DataScience_Bernardo_Fabrice_B_Filip$diabetestreamlit.coverage" NAME="diabetestreamlit Coverage Results" MODIFIED="1731938134876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/streamlit" />
+=======
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[Add] Script choix algorythmique" />
+    <MESSAGE value="[Fix] Name Filip" />
+    <MESSAGE value="[Add] Fichier Readme.md à terminer" />
+    <MESSAGE value="[Add] Adresse dépot git clone (Readme.md)" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Add] Adresse dépot git clone (Readme.md)" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/notebooks/modelisation/entrainement_modele_vin.py</url>
+          <line>1</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+>>>>>>> Stashed changes
   </component>
 </project>
