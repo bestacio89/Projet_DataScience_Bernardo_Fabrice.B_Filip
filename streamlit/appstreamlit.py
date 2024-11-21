@@ -1,21 +1,23 @@
 """
-Diabetes Prediction App using a Deep Learning Model in TensorFlow
+Diabetes Prediction App using Multiple Machine Learning Models
 
-This script trains a neural network model to predict diabetes-related outcomes
-using a provided dataset. The script includes data preprocessing, model training,
-evaluation, hyperparameter tuning, and architecture optimization.
+This script trains various machine learning models to predict diabetes-related outcomes
+using a provided dataset. It includes data preprocessing, model training, evaluation,
+hyperparameter tuning, and architecture optimization.
 
 Author: Bernardo Estacio Abreu, Fabrice Bellin, Filip Dabrowsky
-Date: 15/11/2024
+Date: 21/11/2024
 """
-
 
 import streamlit as st
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.linear_model import Perceptron, LinearRegression
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+from sklearn.linear_model import Perceptron, LogisticRegression, LinearRegression
+from sklearn.svm import SVC
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score, mean_squared_error, classification_report, confusion_matrix
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -48,8 +50,8 @@ def plot_confusion_matrix(y_test, y_pred, labels):
     st.pyplot(fig)
 
 # Streamlit App
-st.title("Diabete Dataset Machine Learning App with Visualizations")
-st.write("Explore, preprocess, and apply machine learning models on your dataset.")
+st.title("Diabetes Dataset Machine Learning App with Visualizations")
+st.write("Explore, preprocess, and apply multiple machine learning models on your dataset.")
 
 # File uploader
 uploaded_file = st.file_uploader("Upload your CSV file", type=["csv"])
@@ -89,7 +91,11 @@ if uploaded_file is not None:
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=42)
 
         # Model selection
-        model_choice = st.selectbox("Choose a model:", ["Random Forest", "Perceptron", "Regression"])
+        model_choice = st.selectbox(
+            "Choose a model:",
+            ["Random Forest", "Perceptron", "Logistic Regression", "SVM", "Decision Tree",
+             "K-Nearest Neighbors", "Gradient Boosting", "Linear Regression"]
+        )
 
         # Hyperparameter configuration
         if model_choice == "Random Forest":
@@ -98,7 +104,24 @@ if uploaded_file is not None:
         elif model_choice == "Perceptron":
             max_iter = st.slider("Maximum Iterations:", 100, 1000, 500)
             model = Perceptron(max_iter=max_iter, random_state=42)
-        elif model_choice == "Regression":
+        elif model_choice == "Logistic Regression":
+            C = st.slider("Inverse of regularization strength (C):", 0.01, 10.0, 1.0)
+            model = LogisticRegression(C=C, max_iter=1000)
+        elif model_choice == "SVM":
+            C = st.slider("Regularization parameter (C):", 0.01, 10.0, 1.0)
+            kernel = st.selectbox("Kernel type:", ["linear", "rbf", "poly", "sigmoid"])
+            model = SVC(C=C, kernel=kernel, random_state=42)
+        elif model_choice == "Decision Tree":
+            max_depth = st.slider("Maximum depth:", 1, 20, 10)
+            model = DecisionTreeClassifier(max_depth=max_depth, random_state=42)
+        elif model_choice == "K-Nearest Neighbors":
+            n_neighbors = st.slider("Number of neighbors (k):", 1, 20, 5)
+            model = KNeighborsClassifier(n_neighbors=n_neighbors)
+        elif model_choice == "Gradient Boosting":
+            learning_rate = st.slider("Learning rate:", 0.01, 0.3, 0.1)
+            n_estimators = st.slider("Number of trees (n_estimators):", 10, 200, 100)
+            model = GradientBoostingClassifier(learning_rate=learning_rate, n_estimators=n_estimators, random_state=42)
+        elif model_choice == "Linear Regression":
             model = LinearRegression()
 
         # Train and evaluate
@@ -106,7 +129,7 @@ if uploaded_file is not None:
             model.fit(X_train, y_train)
             y_pred = model.predict(X_test)
 
-            if model_choice in ["Random Forest", "Perceptron"]:
+            if model_choice in ["Random Forest", "Perceptron", "Logistic Regression", "SVM", "Decision Tree", "K-Nearest Neighbors", "Gradient Boosting"]:
                 accuracy = accuracy_score(y_test, y_pred)
                 st.write(f"### Accuracy: {accuracy:.2f}")
                 st.write("### Classification Report")
@@ -116,17 +139,12 @@ if uploaded_file is not None:
                 st.write("### Confusion Matrix")
                 plot_confusion_matrix(y_test, y_pred, labels=np.unique(y_test))
 
-            elif model_choice == "Regression":
+            elif model_choice == "Linear Regression":
                 mse = mean_squared_error(y_test, y_pred)
                 st.write(f"### Mean Squared Error: {mse:.2f}")
                 st.write("### Actual vs Predicted")
                 comparison = pd.DataFrame({"Actual": y_test, "Predicted": y_pred}).head(20)
                 st.write(comparison)
 
-            # Feature importance for Random Forest
-            if model_choice == "Random Forest":
-                st.write("### Feature Importances")
-                feature_importances = pd.Series(model.feature_importances_, index=feature_columns).sort_values(ascending=False)
-                st.bar_chart(feature_importances)
 else:
     st.write("Please upload a CSV file to begin.")
