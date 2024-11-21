@@ -124,4 +124,7 @@ Utilisez ce code avec précaution.
 * Fabrice Bellin
 * Filip Dabrowski
 
+Streamlit app urls 
 
+https://basicdataapp.streamlit.app/
+https://streamlircategorielle.streamlit.app/

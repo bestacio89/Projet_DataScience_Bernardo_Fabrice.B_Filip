@@ -75,4 +75,4 @@ watchdog==4.0.2
 narwhals==1.6.2
 tenacity==8.5.0
 tornado==6.4.1
-seaborn 
+seaborn
