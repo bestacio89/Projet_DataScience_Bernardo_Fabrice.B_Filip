@@ -41,8 +41,7 @@ L'application propose les fonctionnalités suivantes :
 
 ## Structure du projet
 
-Utilisez ce code avec précaution.
-
+```
 ├── data
 │   ├── diabete.csv
 │   ├── external.py
@@ -92,7 +91,7 @@ Utilisez ce code avec précaution.
 ├── requirements.txt
 ├── External Libraries
 └── Scratches and Consoles
-
+```
 
 ## Données
 
